@@ -45,7 +45,7 @@ export const surveyJson = {
               isRequired: true
             },
             {
-              type: "dropdown",
+              type: "checkbox",
               inputType: "dropdown",
               name: "selectquestions",
               title: "Select",

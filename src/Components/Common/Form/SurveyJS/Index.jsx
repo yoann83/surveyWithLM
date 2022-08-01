@@ -5,4 +5,4 @@ import "./Select";
 import "./Text";
 import "./Textarea";
 import "./Metric";
-import "./ChoiceField";
+import "./Choice";

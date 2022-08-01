@@ -27,8 +27,10 @@ export default (props) => {
   };
 
   const {
-    helpTitle,
-    helpText,
+    id = "",
+    name = "",
+    helpTitle = "",
+    helpText = "",
     icon = "",
     label = "",
     expanded = false,
@@ -42,6 +44,8 @@ export default (props) => {
     useSwitches = false,
     LabelProps,
     SelectProps = {
+      id: name,
+      name: name,
       helpTitle: helpTitle,
       helpText: helpText,
       icon: icon,
@@ -63,6 +67,8 @@ export default (props) => {
 
   const selectProps = {
     ...{
+      id,
+      name,
       helpTitle,
       helpText,
       icon,
@@ -96,51 +102,60 @@ export default (props) => {
     );
   }); //, [choices, useSwitches, choiceLabelRenderer, expanded, multiple]);
 
-  return (
-    <>
-      <FormControl {...ControlProps}>
-        {label && (
-          <Label
-            {...{
-              label,
-              asInputLabel: !expanded && (selectProps.label ?? false)
-            }}
-          />
-        )}
-        {expanded ? (
-          multiple ? (
-            <FormGroup row={true}>{choiceItems}</FormGroup>
+  const render = useMemo(() => {
+    return (
+      <>
+        <FormControl {...ControlProps}>
+          {label && (
+            <Label
+              {...{
+                label,
+                asInputLabel: !expanded && (selectProps.label ?? false)
+              }}
+            />
+          )}
+          {expanded ? (
+            multiple ? (
+              <FormGroup row={true}>{choiceItems}</FormGroup>
+            ) : (
+              <RadioGroup row={true}>{choiceItems}</RadioGroup>
+            )
           ) : (
-            <RadioGroup row={true}>{choiceItems}</RadioGroup>
-          )
-        ) : (
-          <Select {...selectProps}>{choiceItems}</Select>
-        )}
-      </FormControl>
-      <div className="icons">
-        {selectProps.icon.right ? (
-          <i className={icon.right} aria-hidden="true"></i>
-        ) : null}
-      </div>
-      <i
-        onClick={handleClick("top-start")}
-        className="fa fa-question-circle"
-        aria-hidden="true"
-      ></i>
-      <Popper open={open} anchorEl={anchorEl} placement={placement} transition>
-        {({ TransitionProps }) => (
-          <Fade {...TransitionProps} timeout={1000}>
-            <Paper>
-              <Typography className="popper" sx={{ p: 2 }}>
-                <span className="h5">
-                  <dfn>{helpTitle}</dfn>
-                </span>
-                <span className="text">{helpText}</span>
-              </Typography>
-            </Paper>
-          </Fade>
-        )}
-      </Popper>
-    </>
-  );
+            <Select {...selectProps}>{choiceItems}</Select>
+          )}
+        </FormControl>
+        <div className="icons">
+          {selectProps.icon.right ? (
+            <i className={icon.right} aria-hidden="true"></i>
+          ) : null}
+        </div>
+        <i
+          onClick={handleClick("top-start")}
+          className="fa fa-question-circle"
+          aria-hidden="true"
+        ></i>
+        <Popper
+          open={open}
+          anchorEl={anchorEl}
+          placement={placement}
+          transition
+        >
+          {({ TransitionProps }) => (
+            <Fade {...TransitionProps} timeout={1000}>
+              <Paper>
+                <Typography className="popper" sx={{ p: 2 }}>
+                  <span className="h5">
+                    <dfn>{helpTitle}</dfn>
+                  </span>
+                  <span className="text">{helpText}</span>
+                </Typography>
+              </Paper>
+            </Fade>
+          )}
+        </Popper>
+      </>
+    );
+  }, [label, choices, expanded, multiple]);
+
+  return render;
 };
