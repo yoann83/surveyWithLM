@@ -5,4 +5,5 @@ import "./Select";
 import "./Text";
 import "./Textarea";
 import "./Metric";
-import "./Choice";
+import "./Select";
+import "./Checkbox";

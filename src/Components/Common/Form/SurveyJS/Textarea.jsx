@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
 import PropTypes from "prop-types";
-import TextareaEgerie from "../../../TextareaField";
+import TextareaField from "../../../TextareaField";
 
 /* style Overload */
 import "../../scss/sassForm/_Textarea.scss";
@@ -9,11 +9,11 @@ import "../../scss/sassForm/_Textarea.scss";
 export default function Textarea(props) {
   return (
     <div>
-      <TextareaEgerie
+      <TextareaField
         minRows={2}
         maxRows={8}
-        fullWidth={true}
-        type={props.question.inputType}
+        width="100%"
+        type={props.question.getType()}
         id={props.question.name}
         name={props.question.name}
         label={props.question.title}
@@ -28,8 +28,8 @@ export default function Textarea(props) {
         onChange={(value) => {
           props.question.value = value;
         }}
-        helpTitle={props.question.title}
-        helpText={
+        helptitle={props.question.title}
+        helptext={
           "Je suis le text d'aide pour le champ : " +
           props.question.name.toUpperCase()
         }
@@ -42,7 +42,7 @@ ReactQuestionFactory.Instance.registerQuestion("comment", (props) => {
   return React.createElement(Textarea, props);
 });
 
-TextareaEgerie.propTypes = {
+TextareaField.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,

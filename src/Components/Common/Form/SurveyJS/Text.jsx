@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
 import PropTypes from "prop-types";
-import TextEgerie from "../../../TextField";
+import TextField from "../../../TextField";
 
 /* style Overload */
 import "../../scss/sassForm/_Text.scss";
@@ -9,7 +9,7 @@ import "../../scss/sassForm/_Text.scss";
 export default function Text(props) {
   return (
     <div>
-      <TextEgerie
+      <TextField
         fullWidth={true}
         multiline={props.question.inputType === "comment" ? true : false}
         type={props.question.inputType}
@@ -27,8 +27,8 @@ export default function Text(props) {
         onChange={(value) => {
           props.question.value = value;
         }}
-        helpTitle={props.question.title}
-        helpText={
+        helptitle={props.question.title}
+        helptext={
           "Je suis le text d'aide pour le champ : " +
           props.question.name.toUpperCase()
         }
@@ -42,7 +42,7 @@ ReactQuestionFactory.Instance.registerQuestion("text", (props) => {
   return React.createElement(Text, props);
 });
 
-TextEgerie.propTypes = {
+TextField.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,

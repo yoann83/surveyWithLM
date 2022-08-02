@@ -14,7 +14,7 @@ import {
   MenuItem
 } from "@mui/material";
 import Label from "./LabelField";
-import { useMemo, useCallback } from "react";
+import { useCallback } from "react";
 
 export default (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -27,10 +27,11 @@ export default (props) => {
   };
 
   const {
+    onChange = {},
     id = "",
     name = "",
-    helpTitle = "",
-    helpText = "",
+    helptitle = "",
+    helptext = "",
     icon = "",
     label = "",
     expanded = false,
@@ -44,10 +45,11 @@ export default (props) => {
     useSwitches = false,
     LabelProps,
     SelectProps = {
+      onChange: onChange,
       id: name,
       name: name,
-      helpTitle: helpTitle,
-      helpText: helpText,
+      helptitle: helptitle,
+      helptext: helptext,
       icon: icon,
       label: label
     },
@@ -67,10 +69,11 @@ export default (props) => {
 
   const selectProps = {
     ...{
+      onChange,
       id,
       name,
-      helpTitle,
-      helpText,
+      helptitle,
+      helptext,
       icon,
       label,
       multiple,
@@ -102,60 +105,55 @@ export default (props) => {
     );
   }); //, [choices, useSwitches, choiceLabelRenderer, expanded, multiple]);
 
-  const render = useMemo(() => {
-    return (
-      <>
-        <FormControl {...ControlProps}>
-          {label && (
-            <Label
-              {...{
-                label,
-                asInputLabel: !expanded && (selectProps.label ?? false)
-              }}
-            />
-          )}
-          {expanded ? (
-            multiple ? (
-              <FormGroup row={true}>{choiceItems}</FormGroup>
-            ) : (
-              <RadioGroup row={true}>{choiceItems}</RadioGroup>
-            )
+  return (
+    <>
+      <FormControl {...ControlProps}>
+        {label && (
+          <Label
+            {...{
+              label,
+              asInputLabel: !expanded && (selectProps.label ?? false)
+            }}
+          />
+        )}
+        {expanded ? (
+          multiple ? (
+            <FormGroup row={true} {...selectProps}>
+              {choiceItems}
+            </FormGroup>
           ) : (
-            <Select {...selectProps}>{choiceItems}</Select>
-          )}
-        </FormControl>
-        <div className="icons">
-          {selectProps.icon.right ? (
-            <i className={icon.right} aria-hidden="true"></i>
-          ) : null}
-        </div>
-        <i
-          onClick={handleClick("top-start")}
-          className="fa fa-question-circle"
-          aria-hidden="true"
-        ></i>
-        <Popper
-          open={open}
-          anchorEl={anchorEl}
-          placement={placement}
-          transition
-        >
-          {({ TransitionProps }) => (
-            <Fade {...TransitionProps} timeout={1000}>
-              <Paper>
-                <Typography className="popper" sx={{ p: 2 }}>
-                  <span className="h5">
-                    <dfn>{helpTitle}</dfn>
-                  </span>
-                  <span className="text">{helpText}</span>
-                </Typography>
-              </Paper>
-            </Fade>
-          )}
-        </Popper>
-      </>
-    );
-  }, [label, choices, expanded, multiple]);
-
-  return render;
+            <RadioGroup row={true} {...selectProps}>
+              {choiceItems}
+            </RadioGroup>
+          )
+        ) : (
+          <Select {...selectProps}>{choiceItems}</Select>
+        )}
+      </FormControl>
+      <div className="icons">
+        {selectProps.icon.right ? (
+          <i className={icon.right} aria-hidden="true"></i>
+        ) : null}
+      </div>
+      <i
+        onClick={handleClick("top-start")}
+        className="fa fa-question-circle"
+        aria-hidden="true"
+      ></i>
+      <Popper open={open} anchorEl={anchorEl} placement={placement} transition>
+        {({ TransitionProps }) => (
+          <Fade {...TransitionProps} timeout={1000}>
+            <Paper>
+              <Typography className="popper" sx={{ p: 2 }}>
+                <span className="h5">
+                  <dfn>{helptitle}</dfn>
+                </span>
+                <span className="text">{helptext}</span>
+              </Typography>
+            </Paper>
+          </Fade>
+        )}
+      </Popper>
+    </>
+  );
 };

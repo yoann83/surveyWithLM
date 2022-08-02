@@ -6,8 +6,8 @@ import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 
 export default function ({
-  helpTitle,
-  helpText,
+  helptitle,
+  helptext,
   description,
   icon,
   onChange,
@@ -68,9 +68,9 @@ export default function ({
               <Paper>
                 <Typography className="popper" sx={{ p: 2 }}>
                   <span className="h5">
-                    <dfn>{helpTitle}</dfn>
+                    <dfn>{helptitle}</dfn>
                   </span>
-                  <span className="text">{helpText}</span>
+                  <span className="text">{helptext}</span>
                 </Typography>
               </Paper>
             </Fade>
