@@ -16,9 +16,9 @@ export default function Select(props) {
       <div className="select-question">
         <div className="select">
           <ChoiceField
+            multiple={props.question.state.multiple}
             {...{
               onChange: onSelectChange,
-              id: props.question.name,
               name: props.question.name,
               fullWidth: true,
               helptitle: props.question.title,

@@ -3,9 +3,9 @@ import { ReactQuestionFactory } from "survey-react";
 import ChoiceField from "../../../ChoiceField";
 
 /* style Overload */
-import "../../scss/sassForm/_Checkbox.scss";
+import "../../scss/sassForm/_Radio.scss";
 
-export default function Checkbox(props) {
+export default function Radio(props) {
   const onSelectChange = (e) => {
     props.question.setValueCore(
       e.target.value ? e.target.value : props.question.defaultValue
@@ -13,11 +13,10 @@ export default function Checkbox(props) {
   };
   return (
     <div>
-      <div className="checkbox-question">
-        <div className="checkbox">
+      <div className="radio-question">
+        <div className="radio">
           <ChoiceField
             expanded
-            multiple
             onChange={onSelectChange}
             name={props.question.name}
             fullWidth={true}
@@ -36,6 +35,6 @@ export default function Checkbox(props) {
   );
 }
 /* only overload original type ("text", "dropdown" ...) and uncomment scss */
-ReactQuestionFactory.Instance.registerQuestion("checkbox", (props) => {
-  return React.createElement(Checkbox, props);
+ReactQuestionFactory.Instance.registerQuestion("radiogroup", (props) => {
+  return React.createElement(Radio, props);
 });

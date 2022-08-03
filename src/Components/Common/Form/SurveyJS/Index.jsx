@@ -6,4 +6,5 @@ import "./Text";
 import "./Textarea";
 import "./Metric";
 import "./Select";
+import "./Radio";
 import "./Checkbox";

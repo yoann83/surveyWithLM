@@ -28,7 +28,6 @@ export default (props) => {
 
   const {
     onChange = {},
-    id = "",
     name = "",
     helptitle = "",
     helptext = "",
@@ -46,7 +45,6 @@ export default (props) => {
     LabelProps,
     SelectProps = {
       onChange: onChange,
-      id: name,
       name: name,
       helptitle: helptitle,
       helptext: helptext,
@@ -70,7 +68,6 @@ export default (props) => {
   const selectProps = {
     ...{
       onChange,
-      id,
       name,
       helptitle,
       helptext,
@@ -118,9 +115,7 @@ export default (props) => {
         )}
         {expanded ? (
           multiple ? (
-            <FormGroup row={true} {...selectProps}>
-              {choiceItems}
-            </FormGroup>
+            <FormGroup row={true}>{choiceItems}</FormGroup>
           ) : (
             <RadioGroup row={true} {...selectProps}>
               {choiceItems}

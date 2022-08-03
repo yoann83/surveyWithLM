@@ -48,10 +48,21 @@ export const surveyJson = {
               type: "dropdown",
               inputType: "dropdown",
               name: "selectquestions",
+              state: { multiple: false },
               title: "Select",
               defaultValue: "Audi",
               hasNone: true,
               choices: ["Audi", "Peugeot", "Renault", "Volkswagen"],
+              titleLocation: "hidden",
+              isRequired: true
+            },
+            {
+              type: "radiogroup",
+              inputType: "radiogroup",
+              name: "radiogroupquestions",
+              title: "Radio",
+              hasNone: true,
+              choices: ["Kawazaki", "Honda", "Ducati", "Suzuki"],
               titleLocation: "hidden",
               isRequired: true
             },
@@ -61,7 +72,13 @@ export const surveyJson = {
               name: "checkboxquestions",
               title: "Checkbox",
               hasNone: true,
-              choices: ["Kawazaki", "Honda", "Ducati", "Suzuki"],
+              choices: [
+                "Roadsters",
+                "Cruisers",
+                "Sportives",
+                "Trial",
+                "Supermotard"
+              ],
               titleLocation: "hidden",
               isRequired: true
             },
