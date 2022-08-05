@@ -24,7 +24,7 @@ export const surveyJson = {
               defaultValue: "Valeur Default Survey",
               description: 'Description de Survey "title"',
               titleLocation: "hidden",
-              isRequired: true
+              isRequired: false
             },
             {
               type: "text",
@@ -33,7 +33,7 @@ export const surveyJson = {
               title: "Number  -> inputype: number",
               titleLocation: "hidden",
               isRequired: false,
-              hideNumber: true
+              hideNumber: false
             },
             {
               type: "text",
@@ -42,13 +42,12 @@ export const surveyJson = {
               title: "Multiline -> inputype : comment",
               titleLocation: "hidden",
               multiline: true,
-              isRequired: true
+              isRequired: false
             },
             {
               type: "dropdown",
               inputType: "dropdown",
               name: "selectquestions",
-              state: { multiple: false },
               title: "Select",
               defaultValue: "Audi",
               hasNone: true,
@@ -57,20 +56,10 @@ export const surveyJson = {
               isRequired: true
             },
             {
-              type: "radiogroup",
-              inputType: "radiogroup",
-              name: "radiogroupquestions",
-              title: "Radio",
-              hasNone: true,
-              choices: ["Kawazaki", "Honda", "Ducati", "Suzuki"],
-              titleLocation: "hidden",
-              isRequired: true
-            },
-            {
               type: "checkbox",
-              inputType: "checkbox",
-              name: "checkboxquestions",
-              title: "Checkbox",
+              name: "multidropdownquestions",
+              title: "Multi-Select",
+              state: { multiple: true, isdropdown: true },
               hasNone: true,
               choices: [
                 "Roadsters",
@@ -80,7 +69,34 @@ export const surveyJson = {
                 "Supermotard"
               ],
               titleLocation: "hidden",
-              isRequired: true
+              isRequired: false
+            },
+            {
+              type: "radiogroup",
+              inputType: "radiogroup",
+              name: "radiogroupquestions",
+              title: "Radio",
+              hasNone: true,
+              choices: ["Kawazaki", "Honda", "Ducati", "Suzuki"],
+              titleLocation: "hidden",
+              isRequired: false
+            },
+            {
+              type: "checkbox",
+              inputType: "checkbox",
+              name: "checkboxquestions",
+              title: "Checkbox",
+              state: { multiple: true, isdropdown: false },
+              hasNone: true,
+              choices: [
+                "Roadsters",
+                "Cruisers",
+                "Sportives",
+                "Trial",
+                "Supermotard"
+              ],
+              titleLocation: "hidden",
+              isRequired: false
             },
             {
               type: "comment",

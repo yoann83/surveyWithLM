@@ -16,8 +16,8 @@ export default function Checkbox(props) {
       <div className="checkbox-question">
         <div className="checkbox">
           <ChoiceField
-            expanded
-            multiple
+            expanded={!props.question.state.isdropdown}
+            multiple={props.question.state.multiple}
             onChange={onSelectChange}
             name={props.question.name}
             fullWidth={true}
@@ -30,6 +30,7 @@ export default function Checkbox(props) {
             required={props.question.isRequired}
             choices={props.question.choices.map((c) => c.value)}
           />
+          <pre>{JSON.stringify(props.question, null, 2)}</pre>
         </div>
       </div>
     </div>

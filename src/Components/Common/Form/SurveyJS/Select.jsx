@@ -7,28 +7,25 @@ import "../../scss/sassForm/_Select.scss";
 
 export default function Select(props) {
   const onSelectChange = (e) => {
-    props.question.setValueCore(
-      e.target.value ? e.target.value : props.question.defaultValue
-    );
+    props.question.setValueCore(e.target.value);
   };
+
   return (
     <div>
       <div className="select-question">
         <div className="select">
           <ChoiceField
-            multiple={props.question.state.multiple}
-            {...{
-              onChange: onSelectChange,
-              name: props.question.name,
-              fullWidth: true,
-              helptitle: props.question.title,
-              helptext:
-                "Je suis le text d'aide pour le champ : " +
-                props.question.name.toUpperCase(),
-              label: props.question.title,
-              required: props.question.isRequired,
-              choices: props.question.choices.map((c) => c.value)
-            }}
+            onChange={onSelectChange}
+            name={props.question.name}
+            fullWidth={true}
+            helptitle={props.question.title}
+            helptext={
+              "Je suis le text d'aide pour le champ : " +
+              props.question.name.toUpperCase()
+            }
+            label={props.question.title}
+            required={props.question.isRequired}
+            choices={props.question.choices.map((c) => c.value)}
           />
         </div>
       </div>
