@@ -30,7 +30,7 @@ export default function Checkbox(props) {
             required={props.question.isRequired}
             choices={props.question.choices.map((c) => c.value)}
           />
-          <pre>{JSON.stringify(props.question, null, 2)}</pre>
+          {/*<pre>{JSON.stringify(props.question, null, 2)}</pre>*/}
         </div>
       </div>
     </div>
