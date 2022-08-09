@@ -34,15 +34,16 @@ export default (props) => {
     helptext = "",
     icon = "",
     label = "",
-    expanded = false,
-    multiple = false,
+    multiple = props.multiple,
     choices = props.choices,
+    expanded = props.expanded,
+    useSwitches = props.useSwitches,
+    doUseSwitches = multiple && expanded && useSwitches,
     choiceLabelRenderer = useCallback((choice) => choice, []),
     ...other
   } = props;
 
   const {
-    useSwitches = false,
     LabelProps,
     SelectProps = {
       onChange: onChange,
@@ -57,8 +58,6 @@ export default (props) => {
     FormHelperTextProps,
     ...otherProps
   } = other;
-
-  const doUseSwitches = multiple && expanded && useSwitches;
 
   const ControlProps = {
     //fullWidth: true,
@@ -85,18 +84,12 @@ export default (props) => {
   const choiceItems = choices.map((choice) => {
     return expanded ? (
       <FormControlLabel
-        {...{
-          key: choice,
-          value: choice,
-          label: choiceLabelRenderer(choice),
-          control: doUseSwitches ? (
-            <Switch />
-          ) : multiple ? (
-            <Checkbox />
-          ) : (
-            <Radio />
-          )
-        }}
+        key={choice}
+        value={choice}
+        label={choiceLabelRenderer(choice)}
+        control={
+          doUseSwitches ? <Switch /> : multiple ? <Checkbox /> : <Radio />
+        }
       />
     ) : (
       <MenuItem {...{ key: choice, value: choice }}>
@@ -118,9 +111,7 @@ export default (props) => {
         )}
         {expanded ? (
           multiple ? (
-            <FormGroup row={true} {...selectProps}>
-              {choiceItems}
-            </FormGroup>
+            <FormGroup row={true}>{choiceItems}</FormGroup>
           ) : (
             <RadioGroup row={true} {...selectProps}>
               {choiceItems}

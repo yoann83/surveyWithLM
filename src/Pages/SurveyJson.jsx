@@ -86,7 +86,7 @@ export const surveyJson = {
               inputType: "checkbox",
               name: "checkboxquestions",
               title: "Checkbox",
-              state: { multiple: true, isdropdown: false },
+              state: { multiple: true, isdropdown: true },
               hasNone: true,
               choices: [
                 "Roadsters",
@@ -110,12 +110,12 @@ export const surveyJson = {
             },
             {
               type: "boolean",
-              inputType: "boolean",
               name: "booleanquestion",
               title: "Boolean",
+              defaultValue: "false",
               labelTrue: "Mr.",
               labelFalse: "Mrs.",
-              indent: 3,
+              titleLocation: "hidden",
               isRequired: false,
               hideNumber: true
             }

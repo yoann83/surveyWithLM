@@ -8,3 +8,4 @@ import "./Metric";
 import "./Select";
 import "./Radio";
 import "./Checkbox";
+import "./Switch";

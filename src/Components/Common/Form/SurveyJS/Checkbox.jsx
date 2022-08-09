@@ -5,7 +5,7 @@ import ChoiceField from "../../../ChoiceField";
 /* style Overload */
 import "../../scss/sassForm/_Checkbox.scss";
 
-export default function Checkbox(props) {
+export default function Choice(props) {
   const onSelectChange = (e) => {
     props.question.setValueCore(
       e.target.value ? e.target.value : props.question.defaultValue
@@ -18,6 +18,7 @@ export default function Checkbox(props) {
           <ChoiceField
             expanded={!props.question.state.isdropdown}
             multiple={props.question.state.multiple}
+            useSwitches={props.question.state.useSwitches}
             onChange={onSelectChange}
             name={props.question.name}
             fullWidth={true}
@@ -38,5 +39,5 @@ export default function Checkbox(props) {
 }
 /* only overload original type ("text", "dropdown" ...) and uncomment scss */
 ReactQuestionFactory.Instance.registerQuestion("checkbox", (props) => {
-  return React.createElement(Checkbox, props);
+  return React.createElement(Choice, props);
 });
