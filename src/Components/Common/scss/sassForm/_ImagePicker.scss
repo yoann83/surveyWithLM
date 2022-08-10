@@ -12,6 +12,7 @@ $field_egerie : #f5f5f5;
    }
   .imagepicker{
     display: flex;
+    flex-direction: column;
     label{
       display: none;
     }
