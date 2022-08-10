@@ -9,3 +9,4 @@ import "./Select";
 import "./Radio";
 import "./Checkbox";
 import "./Switch";
+import "./ImagePicker";

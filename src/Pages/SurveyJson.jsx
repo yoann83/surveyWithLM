@@ -118,6 +118,64 @@ export const surveyJson = {
               titleLocation: "hidden",
               isRequired: false,
               hideNumber: true
+            },
+            {
+              type: "imagepicker",
+              name: "imagepickerquestion",
+              title: "Image Picker",
+              description: "Description de Survey imagePicker",
+              titleLocation: "hidden",
+              defaultValue: {
+                title: "CYBERSECURITY 2022",
+                author: "@egerie",
+                loading: "lazy",
+                position: "top",
+                icon: "fab fa-audible",
+                value: "cybersecurity",
+                imageLink:
+                  "https://egerie.eu/wp-content/uploads/2022/04/shutterstock_1450239362-3-scaled.jpg"
+              },
+              choices: [
+                {
+                  value: "cybersecurity",
+                  imageLink:
+                    "https://egerie.eu/wp-content/uploads/2022/04/shutterstock_1450239362-3-scaled.jpg"
+                },
+                {
+                  value: "cyberrisques",
+                  imageLink:
+                    "https://egerie.eu/wp-content/uploads/2022/01/Banniere-Quantification-financiere-site-internet.png"
+                },
+                {
+                  value: "riskmanager",
+                  imageLink:
+                    "https://egerie.eu/wp-content/uploads/2021/12/Banniere-Fonctionnalites-V4.0.png"
+                }
+              ],
+              state: {
+                attrs: [
+                  {
+                    title: "CYBERSECURITY 2022",
+                    author: "@egerie",
+                    loading: "lazy",
+                    position: "top",
+                    icon: "fab fa-audible"
+                  },
+                  {
+                    title: "Cyber-risques",
+                    author: "@egerie",
+                    loading: "lazy",
+                    position: "bottom"
+                  },
+                  {
+                    title: "RISK MANAGER",
+                    author: "@egerie",
+                    loading: "lazy",
+                    position: "below",
+                    icon: "fa fa-id-card"
+                  }
+                ]
+              }
             }
           ]
         }
