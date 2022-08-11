@@ -7,10 +7,6 @@ import Fade from "@mui/material/Fade";
 import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 
-import Radio from "@mui/material/Radio";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-
 export default function ({
   helptitle,
   helptext,
@@ -38,9 +34,6 @@ export default function ({
     <div className="imagepicker-question">
       <p>{description}</p>
       <div className="imagepicker">
-        <FormControl>
-          <FormControlLabel onChange={onChange} control={<Radio />} />
-        </FormControl>
         <ImageList>
           {props.choices.map((item, index) => (
             <ImageListItem key={item.imageLink}>
