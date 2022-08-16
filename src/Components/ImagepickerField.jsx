@@ -24,7 +24,7 @@ export default function ({
     setPlacement(newPlacement);
   };
   const [value, setValue] = useState();
-  const onSelectChange = (e) => {
+  const handleChange = (e) => {
     setValue(e.target.getAttribute("value"));
     onChange(value);
   };
@@ -40,7 +40,7 @@ export default function ({
               <img
                 src={item.imageLink}
                 srcSet={item.imageLink}
-                onClick={onSelectChange}
+                onClick={handleChange}
                 value={item.value}
                 alt={props.state[index].title}
                 loading={props.state[index].loading}

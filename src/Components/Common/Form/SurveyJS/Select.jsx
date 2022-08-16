@@ -6,7 +6,7 @@ import ChoiceField from "../../../ChoiceField";
 import "../../scss/sassForm/_Select.scss";
 
 export default function Select(props) {
-  const onSelectChange = (e) => {
+  const handleChange = (e) => {
     props.question.setValueCore(e.target.value);
   };
 
@@ -15,7 +15,7 @@ export default function Select(props) {
       <div className="select-question">
         <div className="select">
           <ChoiceField
-            onChange={onSelectChange}
+            onChange={handleChange}
             name={props.question.name}
             fullWidth={true}
             helptitle={props.question.title}

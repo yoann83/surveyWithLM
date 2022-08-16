@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactQuestionFactory } from "survey-react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -8,7 +8,7 @@ import SwitchField from "@mui/material/Switch";
 import "../../scss/sassForm/_Radio.scss";
 
 export default function Switch(props) {
-  const onSelectChange = (e) => {
+  const handleChange = (e) => {
     props.question.setValueCore(
       e.target.value ? "true" : props.question.defaultValue
     );
@@ -21,7 +21,7 @@ export default function Switch(props) {
             <FormControlLabel
               defaultValue={props.question.defaultValue}
               control={<SwitchField />}
-              onChange={onSelectChange}
+              onChange={handleChange}
               label={props.question.title}
             />
           </FormGroup>

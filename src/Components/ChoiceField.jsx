@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-import { FormControl, FormControlLabel } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import Fade from "@mui/material/Fade";
-import Paper from "@mui/material/Paper";
-import Popper from "@mui/material/Popper";
+import React, { useState, useCallback } from "react";
 import {
   Checkbox,
   FormGroup,
@@ -11,10 +6,15 @@ import {
   Radio,
   Switch,
   Select,
-  MenuItem
+  MenuItem,
+  FormControl,
+  FormControlLabel,
+  Popper,
+  Paper,
+  Fade,
+  Typography
 } from "@mui/material";
 import Label from "./LabelField";
-import { useCallback } from "react";
 
 export default (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -60,8 +60,6 @@ export default (props) => {
   } = other;
 
   const ControlProps = {
-    //fullWidth: true,
-    //variant: "filled",
     hiddenLabel: true,
     ...(otherProps ?? {})
   };

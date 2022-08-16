@@ -6,7 +6,7 @@ import ChoiceField from "../../../ChoiceField";
 import "../../scss/sassForm/_Checkbox.scss";
 
 export default function Choice(props) {
-  const onSelectChange = (e) => {
+  const handleChange = (e) => {
     props.question.setValueCore(
       e.target.value ? e.target.value : props.question.defaultValue
     );
@@ -19,7 +19,7 @@ export default function Choice(props) {
             expanded={!props.question.state.isdropdown}
             multiple={props.question.state.multiple}
             useSwitches={props.question.state.useSwitches}
-            onChange={onSelectChange}
+            onChange={handleChange}
             name={props.question.name}
             fullWidth={true}
             helptitle={props.question.title}
