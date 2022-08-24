@@ -94,10 +94,15 @@ export default (props) => {
         {choiceLabelRenderer(choice)}
       </MenuItem>
     );
-  }); //, [choices, useSwitches, choiceLabelRenderer, expanded, multiple]);
+  });
 
   return (
     <>
+      <div className="icons">
+        {selectProps.icon.left ? (
+          <i className={icon.left} aria-hidden="true"></i>
+        ) : null}
+      </div>
       <FormControl {...ControlProps}>
         {label && (
           <Label
@@ -124,7 +129,7 @@ export default (props) => {
       </div>
       <i
         onClick={handleClick("top-start")}
-        className="fa fa-question-circle"
+        className={icon.help}
         aria-hidden="true"
       ></i>
       <Popper open={open} anchorEl={anchorEl} placement={placement} transition>

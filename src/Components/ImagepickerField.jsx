@@ -30,7 +30,6 @@ export default function ({
   };
 
   return (
-    /* construct (overloard) all components (ex : material ui) */
     <div className="imagepicker-question">
       <p>{description}</p>
       <div className="imagepicker">
@@ -56,15 +55,21 @@ export default function ({
                 position={props.state[index].position}
                 actionIcon={
                   <div className="icons">
-                    {props.state[index].icon ? (
+                    {props.state[index].iconLeft ? (
                       <i
-                        className={props.state[index].icon}
+                        className={props.state[index].iconLeft}
+                        aria-hidden="true"
+                      ></i>
+                    ) : null}
+                    {props.state[index].iconRight ? (
+                      <i
+                        className={props.state[index].iconRight}
                         aria-hidden="true"
                       ></i>
                     ) : null}
                     <i
                       onClick={handleClick("top-start")}
-                      className="fa fa-question-circle"
+                      className={props.state[index].iconHelp}
                       aria-hidden="true"
                     ></i>
                     <Popper

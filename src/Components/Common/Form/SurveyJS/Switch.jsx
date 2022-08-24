@@ -3,8 +3,6 @@ import { ReactQuestionFactory } from "survey-react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import SwitchField from "@mui/material/Switch";
-
-/* style Overload */
 import "../../scss/sassForm/_Radio.scss";
 
 export default function Switch(props) {
@@ -25,7 +23,6 @@ export default function Switch(props) {
               label={props.question.title}
             />
           </FormGroup>
-          {/*<pre>{JSON.stringify(props.question, null, 2)}</pre>*/}
         </div>
       </div>
     </div>

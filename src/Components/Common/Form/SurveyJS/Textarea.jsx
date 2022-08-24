@@ -1,9 +1,6 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
-import PropTypes from "prop-types";
 import TextareaField from "../../../TextareaField";
-
-/* style Overload */
 import "../../scss/sassForm/_Textarea.scss";
 
 export default function Textarea(props) {
@@ -22,17 +19,15 @@ export default function Textarea(props) {
         defaultValue={props.question.defaultValue}
         description={props.question.description}
         icon={{
-          left: "fa fa-id-card"
-          //right: "fab fa-audible"
+          help: props.question.state.iconHelp,
+          left: props.question.state.iconLeft,
+          right: props.question.state.iconRight
         }}
         onChange={(value) => {
           props.question.value = value;
         }}
         helptitle={props.question.title}
-        helptext={
-          "Je suis le text d'aide pour le champ : " +
-          props.question.name.toUpperCase()
-        }
+        helptext={props.question.state.helptext}
       />
     </div>
   );
@@ -41,19 +36,3 @@ export default function Textarea(props) {
 ReactQuestionFactory.Instance.registerQuestion("comment", (props) => {
   return React.createElement(Textarea, props);
 });
-
-TextareaField.propTypes = {
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  fullWidth: PropTypes.bool,
-  multiline: PropTypes.bool,
-  id: PropTypes.string,
-  description: PropTypes.string,
-  defaultValue: PropTypes.string,
-  icon: PropTypes.object,
-  variant: PropTypes.string,
-  required: PropTypes.bool,
-  helpTitle: PropTypes.string,
-  helpText: PropTypes.string
-};

@@ -27,7 +27,6 @@ export default function ({
     onChange(e.target.value);
   };
   return (
-    /* construct (overloard) all components (ex : material ui) */
     <div className="textarea-question">
       <p>{description}</p>
       <div className="textarea">
@@ -55,7 +54,7 @@ export default function ({
         </div>
         <i
           onClick={handleClick("top-start")}
-          className="fa fa-question-circle"
+          className={icon.help}
           aria-hidden="true"
         ></i>
         <Popper
@@ -71,7 +70,7 @@ export default function ({
                   <span className="h5">
                     <dfn>{helptitle}</dfn>
                   </span>
-                  <span className="textarea">{helptext}</span>
+                  <span className="text">{helptext}</span>
                 </Typography>
               </Paper>
             </Fade>

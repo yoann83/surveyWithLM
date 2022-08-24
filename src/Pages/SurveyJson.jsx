@@ -21,6 +21,12 @@ export const surveyJson = {
               inputType: "text",
               name: "textquestions",
               title: "Title Survey",
+              state: {
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               defaultValue: "Valeur Default Survey",
               description: 'Description de Survey "title"',
               titleLocation: "hidden",
@@ -31,6 +37,12 @@ export const surveyJson = {
               inputType: "number",
               name: "numberquestion",
               title: "Number  -> inputype: number",
+              state: {
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               titleLocation: "hidden",
               isRequired: false,
               hideNumber: false
@@ -40,6 +52,12 @@ export const surveyJson = {
               inputType: "comment",
               name: "textmultiquestions",
               title: "Multiline -> inputype : comment",
+              state: {
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               titleLocation: "hidden",
               multiline: true,
               isRequired: false
@@ -49,6 +67,12 @@ export const surveyJson = {
               inputType: "dropdown",
               name: "selectquestions",
               title: "Select",
+              state: {
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               defaultValue: "Audi",
               hasNone: true,
               choices: ["Audi", "Peugeot", "Renault", "Volkswagen"],
@@ -59,7 +83,14 @@ export const surveyJson = {
               type: "checkbox",
               name: "multidropdownquestions",
               title: "Multi-Select",
-              state: { multiple: true, isdropdown: true },
+              state: {
+                multiple: true,
+                isdropdown: true,
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               hasNone: true,
               choices: [
                 "Roadsters",
@@ -76,6 +107,12 @@ export const surveyJson = {
               inputType: "radiogroup",
               name: "radiogroupquestions",
               title: "Radio",
+              state: {
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               hasNone: true,
               choices: ["Kawazaki", "Honda", "Ducati", "Suzuki"],
               titleLocation: "hidden",
@@ -86,7 +123,14 @@ export const surveyJson = {
               inputType: "checkbox",
               name: "checkboxquestions",
               title: "Checkbox",
-              state: { multiple: true, isdropdown: true },
+              state: {
+                multiple: true,
+                isdropdown: true,
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               hasNone: true,
               choices: [
                 "Roadsters",
@@ -103,6 +147,12 @@ export const surveyJson = {
               inputType: "text",
               name: "comments",
               title: "Comments",
+              state: {
+                iconHelp: "fa fa-question-circle",
+                iconLeft: "fa fa-id-card",
+                iconRight: "",
+                helptext: "Ici la phrase d'aide du champ voir le json de Survey"
+              },
               defaultValue: "Valeur Default Survey",
               description: 'Description de Survey "comment"',
               titleLocation: "hidden",
@@ -113,8 +163,8 @@ export const surveyJson = {
               name: "booleanquestion",
               title: "Boolean",
               defaultValue: "false",
-              labelTrue: "Mr.",
-              labelFalse: "Mrs.",
+              labelTrue: "",
+              labelFalse: "",
               titleLocation: "hidden",
               isRequired: false,
               hideNumber: true
@@ -130,7 +180,6 @@ export const surveyJson = {
                 author: "@egerie",
                 loading: "lazy",
                 position: "top",
-                icon: "fab fa-audible",
                 value: "cybersecurity",
                 imageLink:
                   "https://egerie.eu/wp-content/uploads/2022/04/shutterstock_1450239362-3-scaled.jpg"
@@ -153,26 +202,35 @@ export const surveyJson = {
                 }
               ],
               state: {
+                helptext:
+                  "Ici la phrase d'aide du champ voir le json de Survey : imagepickerquestion ",
                 attrs: [
                   {
                     title: "CYBERSECURITY 2022",
                     author: "@egerie",
                     loading: "lazy",
                     position: "top",
-                    icon: "fab fa-audible"
+                    iconHelp: "fa fa-question-circle",
+                    iconLeft: "",
+                    iconRight: "fab fa-audible"
                   },
                   {
                     title: "Cyber-risques",
                     author: "@egerie",
                     loading: "lazy",
-                    position: "bottom"
+                    position: "bottom",
+                    iconHelp: "fa fa-question-circle",
+                    iconLeft: "fab fa-audible",
+                    iconRight: "fa fa-id-card"
                   },
                   {
                     title: "RISK MANAGER",
                     author: "@egerie",
                     loading: "lazy",
                     position: "below",
-                    icon: "fa fa-id-card"
+                    iconHelp: "fa fa-question-circle",
+                    iconLeft: "",
+                    iconRight: "fa fa-id-card"
                   }
                 ]
               }

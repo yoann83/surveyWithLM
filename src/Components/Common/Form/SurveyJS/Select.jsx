@@ -1,8 +1,6 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
 import ChoiceField from "../../../ChoiceField";
-
-/* style Overload */
 import "../../scss/sassForm/_Select.scss";
 
 export default function Select(props) {
@@ -19,10 +17,12 @@ export default function Select(props) {
             name={props.question.name}
             fullWidth={true}
             helptitle={props.question.title}
-            helptext={
-              "Je suis le text d'aide pour le champ : " +
-              props.question.name.toUpperCase()
-            }
+            helptext={props.question.state.helptext}
+            icon={{
+              help: props.question.state.iconHelp,
+              left: props.question.state.iconLeft,
+              right: props.question.state.iconRight
+            }}
             label={props.question.title}
             required={props.question.isRequired}
             choices={props.question.choices.map((c) => c.value)}

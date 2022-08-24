@@ -1,7 +1,5 @@
 import React from "react";
 import * as Survey from "survey-react";
-
-/* style Custom */
 import "../../scss/sassForm/_Metric.scss";
 
 export class MetricModel extends Survey.Question {
