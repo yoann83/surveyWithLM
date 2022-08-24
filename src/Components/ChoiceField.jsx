@@ -111,9 +111,7 @@ export default (props) => {
           multiple ? (
             <FormGroup row={true}>{choiceItems}</FormGroup>
           ) : (
-            <RadioGroup row={true} {...selectProps}>
-              {choiceItems}
-            </RadioGroup>
+            <RadioGroup {...selectProps}>{choiceItems}</RadioGroup>
           )
         ) : (
           <Select {...selectProps}>{choiceItems}</Select>

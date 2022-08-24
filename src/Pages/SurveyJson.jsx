@@ -1,9 +1,9 @@
 export const surveyJson = {
   pages: [
     {
-      name: "question",
+      name: "mui",
       navigationTitle: "Question",
-      navigationDescription: "overload",
+      navigationDescription: "overload - MUI",
       elements: [
         {
           type: "image",
@@ -13,8 +13,8 @@ export const surveyJson = {
         },
         {
           type: "panel",
-          name: "question",
-          title: "Question",
+          name: "mui",
+          title: "Material-UI",
           elements: [
             {
               type: "text",
@@ -182,7 +182,57 @@ export const surveyJson = {
       ]
     },
     {
-      name: "widget",
+      name: "survey",
+      navigationTitle: "Question",
+      navigationDescription: "Overload - Survey",
+      elements: [
+        {
+          type: "image",
+          name: "first_page_image",
+          imageLink:
+            "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+        },
+        {
+          type: "panel",
+          name: "survey",
+          title: "Survey",
+          elements: [
+            {
+              type: "ranking",
+              name: "ranking",
+              title: "test",
+              description: "Ranking Survey",
+              descriptionLocation: "underInput",
+              choices: [
+                "Vulnerability n°1",
+                "Vulnerability n°2",
+                "Vulnerability n°3"
+              ],
+              choicesOrder: "asc",
+              separateSpecialChoices: true,
+              titleLocation: "hidden",
+              readOnly: false,
+              isRequired: false,
+              hideNumber: true
+            },
+            {
+              type: "signaturepad",
+              name: "signaturepad",
+              title: "Signature",
+              visible: true,
+              penColor: "#ff5900",
+              titleLocation: "hidden",
+              description: "Consent Survey",
+              descriptionLocation: "underInput",
+              isRequired: false,
+              hideNumber: true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "egerie",
       navigationTitle: "Widget",
       navigationDescription: "custom",
       elements: [
@@ -194,8 +244,8 @@ export const surveyJson = {
         },
         {
           type: "panel",
-          name: "widget",
-          title: "Widget",
+          name: "egerie",
+          title: "Egerie",
           elements: [
             {
               type: "metric",

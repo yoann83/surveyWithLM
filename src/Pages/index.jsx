@@ -6,8 +6,4 @@ import "../Components/Common/scss/sassForm/_index.scss";
 const rootElement = document.getElementById("surveyElement");
 const root = createRoot(rootElement);
 
-root.render(
-  <StrictMode>
-    <SurveyJS />
-  </StrictMode>
-);
+root.render(<SurveyJS />);
