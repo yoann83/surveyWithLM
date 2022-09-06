@@ -1,9 +1,10 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
+import PropTypes from "prop-types";
 import ChoiceField from "../../../ChoiceField";
 import "../../scss/sassForm/_Checkbox.scss";
 
-export default function Choice(props) {
+export default function Checkbox(props) {
   const handleChange = (e) => {
     props.question.setValueCore(
       e.target.value ? e.target.value : props.question.defaultValue
@@ -14,7 +15,7 @@ export default function Choice(props) {
       <div className="checkbox-question">
         <div className="checkbox">
           <ChoiceField
-            expanded={!props.question.state.isdropdown}
+            expanded={props.question.state.isdropdown}
             multiple={props.question.state.multiple}
             useSwitches={props.question.state.useSwitches}
             onChange={handleChange}
@@ -38,5 +39,18 @@ export default function Choice(props) {
 }
 /* only overload original type ("text", "dropdown" ...) and uncomment scss */
 ReactQuestionFactory.Instance.registerQuestion("checkbox", (props) => {
-  return React.createElement(Choice, props);
+  return React.createElement(Checkbox, props);
 });
+
+Checkbox.propTypes = {
+  expanded: PropTypes.bool,
+  multiple: PropTypes.bool,
+  useSwitches: PropTypes.bool,
+  name: PropTypes.string,
+  helptitle: PropTypes.string,
+  label: PropTypes.string,
+  required: PropTypes.bool,
+  icon: PropTypes.object,
+  choices: PropTypes.array,
+  helptext: PropTypes.string
+};

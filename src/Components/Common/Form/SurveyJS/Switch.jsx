@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
+import PropTypes from "prop-types";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import SwitchField from "@mui/material/Switch";
@@ -18,9 +19,9 @@ export default function Switch(props) {
           <FormGroup>
             <FormControlLabel
               defaultValue={props.question.defaultValue}
+              label={props.question.title}
               control={<SwitchField />}
               onChange={handleChange}
-              label={props.question.title}
             />
           </FormGroup>
         </div>
@@ -32,3 +33,8 @@ export default function Switch(props) {
 ReactQuestionFactory.Instance.registerQuestion("boolean", (props) => {
   return React.createElement(Switch, props);
 });
+
+Switch.propTypes = {
+  label: PropTypes.string,
+  defaultValue: PropTypes.string
+};

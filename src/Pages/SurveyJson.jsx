@@ -85,7 +85,7 @@ export const surveyJson = {
               title: "Multi-Select",
               state: {
                 multiple: true,
-                isdropdown: true,
+                isdropdown: false,
                 iconHelp: "fa fa-question-circle",
                 iconLeft: "fa fa-id-card",
                 iconRight: "",
@@ -132,13 +132,7 @@ export const surveyJson = {
                 helptext: "Ici la phrase d'aide du champ voir le json de Survey"
               },
               hasNone: true,
-              choices: [
-                "Roadsters",
-                "Cruisers",
-                "Sportives",
-                "Trial",
-                "Supermotard"
-              ],
+              choices: ["Red", "Black", "Green", "Blue", "Yellow"],
               titleLocation: "hidden",
               isRequired: false
             },

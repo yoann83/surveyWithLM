@@ -1,5 +1,6 @@
 import React from "react";
 import * as Survey from "survey-react";
+//import PropTypes from "prop-types";
 import "../../scss/sassForm/_Metric.scss";
 
 export class MetricModel extends Survey.Question {
@@ -53,3 +54,5 @@ Survey.Serializer.addClass(
 Survey.ReactQuestionFactory.Instance.registerQuestion("metric", (props) => {
   return React.createElement(Metric, props);
 });
+
+//Metric.propTypes = {};

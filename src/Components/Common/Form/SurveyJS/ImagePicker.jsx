@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
+import PropTypes from "prop-types";
 import ImageList from "../../../ImagepickerField";
 import "../../scss/sassForm/_ImagePicker.scss";
 
@@ -30,3 +31,20 @@ export default function ImagePicker(props) {
 ReactQuestionFactory.Instance.registerQuestion("imagepicker", (props) => {
   return React.createElement(ImagePicker, props);
 });
+
+ImagePicker.propTypes = {
+  type: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  defaultValue: PropTypes.string,
+  variant: PropTypes.string,
+  description: PropTypes.string,
+  helptitle: PropTypes.string,
+  label: PropTypes.string,
+  required: PropTypes.bool,
+  state: PropTypes.object,
+  choices: PropTypes.array,
+  iconRight: PropTypes.string,
+  helptext: PropTypes.string
+};

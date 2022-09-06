@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
+import PropTypes from "prop-types";
 import ChoiceField from "../../../ChoiceField";
 import "../../scss/sassForm/_Radio.scss";
 
@@ -38,3 +39,13 @@ export default function Radio(props) {
 ReactQuestionFactory.Instance.registerQuestion("radiogroup", (props) => {
   return React.createElement(Radio, props);
 });
+
+Radio.propTypes = {
+  name: PropTypes.string,
+  helptitle: PropTypes.string,
+  helptext: PropTypes.string,
+  label: PropTypes.string,
+  required: PropTypes.bool,
+  icon: PropTypes.object,
+  choices: PropTypes.array
+};

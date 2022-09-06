@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ReactQuestionFactory } from "survey-react";
 import TextField from "../../../TextField";
 import "../../scss/sassForm/_Text.scss";
@@ -35,3 +36,18 @@ export default function Text(props) {
 ReactQuestionFactory.Instance.registerQuestion("text", (props) => {
   return React.createElement(Text, props);
 });
+
+TextField.propTypes = {
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  multiline: PropTypes.bool,
+  variant: PropTypes.string,
+  required: PropTypes.bool,
+  defaultValue: PropTypes.string,
+  description: PropTypes.string,
+  icon: PropTypes.object,
+  helptitle: PropTypes.string,
+  helptext: PropTypes.string
+};

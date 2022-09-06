@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ReactQuestionFactory } from "survey-react";
 import TextareaField from "../../../TextareaField";
 import "../../scss/sassForm/_Textarea.scss";
@@ -36,3 +37,17 @@ export default function Textarea(props) {
 ReactQuestionFactory.Instance.registerQuestion("comment", (props) => {
   return React.createElement(Textarea, props);
 });
+
+TextareaField.propTypes = {
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  variant: PropTypes.string,
+  required: PropTypes.bool,
+  defaultValue: PropTypes.string,
+  description: PropTypes.string,
+  icon: PropTypes.object,
+  helptitle: PropTypes.string,
+  helptext: PropTypes.string
+};

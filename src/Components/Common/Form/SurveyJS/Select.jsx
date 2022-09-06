@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactQuestionFactory } from "survey-react";
+import PropTypes from "prop-types";
 import ChoiceField from "../../../ChoiceField";
 import "../../scss/sassForm/_Select.scss";
 
@@ -36,3 +37,13 @@ export default function Select(props) {
 ReactQuestionFactory.Instance.registerQuestion("dropdown", (props) => {
   return React.createElement(Select, props);
 });
+
+Select.propTypes = {
+  name: PropTypes.string,
+  helptitle: PropTypes.string,
+  helptext: PropTypes.string,
+  label: PropTypes.string,
+  required: PropTypes.bool,
+  icon: PropTypes.object,
+  choices: PropTypes.array
+};
