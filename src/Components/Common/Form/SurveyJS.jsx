@@ -19,7 +19,7 @@ export default function SurveyJS() {
             type: "image",
             name: "first_page_image",
             imageLink:
-              "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+              "https://cdn.pixabay.com/photo/2023/06/04/09/48/horse-8039245_1280.jpg"
           },
           {
             type: "panel",
@@ -189,7 +189,7 @@ export default function SurveyJS() {
                 titleLocation: "hidden",
                 defaultValue: {
                   title: "CYBERSECURITY 2022",
-                  author: "@egerie",
+                  author: "@tag",
                   loading: "lazy",
                   position: "top",
                   value: "cybersecurity",
@@ -219,7 +219,7 @@ export default function SurveyJS() {
                   attrs: [
                     {
                       title: "CYBERSECURITY 2022",
-                      author: "@egerie",
+                      author: "@tag",
                       loading: "lazy",
                       position: "top",
                       iconHelp: "fa fa-question-circle",
@@ -228,7 +228,7 @@ export default function SurveyJS() {
                     },
                     {
                       title: "Cyber-risques",
-                      author: "@egerie",
+                      author: "@tag",
                       loading: "lazy",
                       position: "bottom",
                       iconHelp: "fa fa-question-circle",
@@ -237,7 +237,7 @@ export default function SurveyJS() {
                     },
                     {
                       title: "RISK MANAGER",
-                      author: "@egerie",
+                      author: "@tag",
                       loading: "lazy",
                       position: "below",
                       iconHelp: "fa fa-question-circle",
@@ -260,7 +260,7 @@ export default function SurveyJS() {
             type: "image",
             name: "first_page_image",
             imageLink:
-              "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+              "https://cdn.pixabay.com/photo/2023/06/04/09/48/horse-8039245_1280.jpg"
           },
           {
             type: "panel",
@@ -302,7 +302,7 @@ export default function SurveyJS() {
         ]
       },
       {
-        name: "egerie",
+        name: "Titre",
         navigationTitle: "Widget",
         navigationDescription: "custom",
         elements: [
@@ -310,12 +310,12 @@ export default function SurveyJS() {
             type: "image",
             name: "first_page_image",
             imageLink:
-              "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+              "https://cdn.pixabay.com/photo/2023/06/04/09/48/horse-8039245_1280.jpg"
           },
           {
             type: "panel",
-            name: "egerie",
-            title: "Egerie",
+            name: "panel",
+            title: "panel",
             elements: [
               {
                 type: "metric",
