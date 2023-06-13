@@ -9,7 +9,7 @@ export const surveyJson = {
           type: "image",
           name: "first_page_image",
           imageLink:
-            "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+            "https://cdn.pixabay.com/photo/2023/06/04/09/48/horse-8039245_1280.jpg"
         },
         {
           type: "panel",
@@ -171,7 +171,7 @@ export const surveyJson = {
               titleLocation: "hidden",
               defaultValue: {
                 title: "CYBERSECURITY 2022",
-                author: "@egerie",
+                author: "@tag",
                 loading: "lazy",
                 position: "top",
                 value: "cybersecurity",
@@ -192,7 +192,7 @@ export const surveyJson = {
                 {
                   value: "riskmanager",
                   imageLink:
-                    "https://egerie.eu/wp-content/uploads/2021/12/Banniere-Fonctionnalites-V4.0.png"
+                    "https://cdn.pixabay.com/photo/2023/06/04/09/48/horse-8039245_1280.jpg"
                 }
               ],
               state: {
@@ -201,7 +201,7 @@ export const surveyJson = {
                 attrs: [
                   {
                     title: "CYBERSECURITY 2022",
-                    author: "@egerie",
+                    author: "@tag",
                     loading: "lazy",
                     position: "top",
                     iconHelp: "fa fa-question-circle",
@@ -210,7 +210,7 @@ export const surveyJson = {
                   },
                   {
                     title: "Cyber-risques",
-                    author: "@egerie",
+                    author: "@tag",
                     loading: "lazy",
                     position: "bottom",
                     iconHelp: "fa fa-question-circle",
@@ -219,7 +219,7 @@ export const surveyJson = {
                   },
                   {
                     title: "RISK MANAGER",
-                    author: "@egerie",
+                    author: "@tag",
                     loading: "lazy",
                     position: "below",
                     iconHelp: "fa fa-question-circle",
@@ -292,7 +292,7 @@ export const surveyJson = {
           type: "image",
           name: "first_page_image",
           imageLink:
-            "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+            "https://cdn.pixabay.com/photo/2023/06/04/09/48/horse-8039245_1280.jpg"
         },
         {
           type: "panel",
